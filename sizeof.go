@@ -24,22 +24,21 @@ Options:
 // Map of units
 var units = map[string]int64{
 	"b":  1,
-	"B":  8,
-	"Kb": (1 << 10),
-	"KB": (1 << 10) * 8,
-	"Mb": (1 << 20),
-	"MB": (1 << 20) * 8,
-	"Gb": (1 << 30),
-	"GB": (1 << 30) * 8,
-	"Tb": (1 << 40),
-	"TB": (1 << 40) * 8,
+	"B":  1 << 3,
+	"Kb": 1 << 10,
+	"KB": 1 << 13,
+	"Mb": 1 << 20,
+	"MB": 1 << 23,
+	"Gb": 1 << 30,
+	"GB": 1 << 33,
+	"Tb": 1 << 40,
+	"TB": 1 << 43,
 }
 
 // Flags
 var (
 	fileFlag  = flag.String("f", "", "")
 	unitsFlag = flag.String("u", "B", "")
-	helpFlag  = flag.Bool("help", false, "")
 )
 
 // Parse units, default "B" (bytes).

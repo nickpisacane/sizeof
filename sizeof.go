@@ -76,7 +76,7 @@ func stringSize(s string) (int64, error) {
 }
 
 // Convert bytes into units.
-func convert(n int64, u int64) (v float64) {
+func convert(n int64, u int64) float64 {
 	return float64(n*8) / float64(u)
 }
 
